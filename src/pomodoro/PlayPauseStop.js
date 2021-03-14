@@ -10,6 +10,7 @@ function PlayPauseStop(props) {
     setIsTimerRunning,
   } = props;
   const { mode } = timeModeMaster;
+
   function stopHandler() {
     setIsTimerRunning(false);
     setTimeModeMaster({
@@ -45,7 +46,6 @@ function PlayPauseStop(props) {
               })}
             />
           </button>
-          {/* TODO: Implement stopping the current focus or break session and disable when there is no active session */}
           <button
             type="button"
             className="btn btn-secondary"

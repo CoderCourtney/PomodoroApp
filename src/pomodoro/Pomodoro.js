@@ -8,16 +8,13 @@ import PlayPauseStop from "./PlayPauseStop";
 function Pomodoro() {
   // Timer starts out paused
   const [isTimerRunning, setIsTimerRunning] = useState(false); // included
-  // const [timeRemaining, setTimeRemaining] = useState(); // wrote this
+
   const [timeModeMaster, setTimeModeMaster] = useState({
-    // wrote
-    // focusDefault: 25,
     focusCurrent: 25,
     focusMin: 5,
     focusMax: 60,
     focusChange: 5,
     focusCount: 25 * 60,
-    // breakDefault: 5,
     breakCurrent: 5,
     breakMin: 1,
     breakMax: 15,
@@ -34,7 +31,7 @@ function Pomodoro() {
   } = timeModeMaster;
   useInterval(
     () => {
-      // ToDo: Implement what should happen when the timer is running
+      // when the timer is running
       if (focusCount === 0) {
         setTimeModeMaster({
           ...timeModeMaster,

@@ -1,5 +1,4 @@
 import React from "react";
-// import { useState } from "react; ";
 import { secondsToDuration, minutesToDuration } from "../utils/duration/index";
 
 function ActiveDisplay(props) {
@@ -22,7 +21,6 @@ function ActiveDisplay(props) {
     let bar = (breakCount / newBrCurr) * 100;
     updateBar = 100 - bar;
   }
-  //   console.log(updateBar, "updateBar info");
   // return new aria-valuenow and style number, which are the same
   // focusCount or breakCount will be counting down as the bar increases
   // focusCurrent or breakCurrent set that to 100% value
@@ -34,16 +32,16 @@ function ActiveDisplay(props) {
   } else {
     return (
       <div>
-        {/* TODO: This area should show only display when a focus or break session is running or pauses */}
+        {/* This area only displays when a focus or break session is running or pauses */}
         <div className="row mb-2">
           <div className="col">
-            {/* TODO: Update message below to include current session (Focusing or On Break) and total duration */}
+            {/* Message updates below to include current session (Focusing or On Break) and total duration */}
             <h2 data-testid="session-title">
               {mode === "Focus"
                 ? `Focusing for ${minutesToDuration(focusCurrent)} minutes`
                 : `On Break for ${minutesToDuration(breakCurrent)} minutes`}
             </h2>
-            {/* TODO: Update message below to include time remaining in the current session */}
+            {/* Message updates below to include time remaining in the current session */}
             <p className="lead" data-testid="session-sub-title">
               {mode === "Focus"
                 ? `${secondsToDuration(focusCount)} remaining`
@@ -59,8 +57,8 @@ function ActiveDisplay(props) {
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
-                aria-valuenow={updateBar} // TODO: Increase aria-valuenow as elapsed time increases
-                style={{ width: `${updateBar}%` }} // TODO: Increase width % as elapsed time increases
+                aria-valuenow={updateBar} // As elapsed time increases aria-valuenow increases
+                style={{ width: `${updateBar}%` }} // As elapsed time increases increases width %
               />
             </div>
           </div>
