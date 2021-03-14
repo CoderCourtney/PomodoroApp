@@ -66,7 +66,9 @@ function Pomodoro() {
 
   function playPause() {
     setIsTimerRunning((prevState) => !prevState);
-    setTimeModeMaster({ ...timeModeMaster, mode: "Focus" });
+    if (mode !== "Focus") {
+      setTimeModeMaster({ ...timeModeMaster, mode: "Focus" });
+    }
   }
 
   return (
